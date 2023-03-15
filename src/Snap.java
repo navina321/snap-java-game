@@ -1,13 +1,16 @@
 package src;
 
-public class Snap extends CardGame{
+import java.util.Scanner;
 
+public class Snap extends CardGame{
+    Scanner scanner = new Scanner(System.in);
     public boolean playGame = true;
     public Snap(String name) {
         super(name);
     }
 
     public void startGame() {
+        String enter = scanner.nextLine();
         while (playGame){
             shuffleDeck();
             for (int i = 0; i < shuffleDeck().size(); i++) {
