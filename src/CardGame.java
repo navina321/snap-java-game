@@ -1,10 +1,13 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
 
     private ArrayList<Card> deckOfCards = new ArrayList<>();
+    private ArrayList<Card> discardPile = new ArrayList<>();
     private String name;
 
     {
@@ -33,4 +36,24 @@ public class CardGame {
         System.out.println(deckOfCards);
     }
 
+    public Card dealCard(){
+        Card topCard = deckOfCards.get(0);
+        deckOfCards.remove(0);
+        discardPile.add(topCard);
+        return topCard;
+    }
+
+    public ArrayList<Card> sortDeckInNumberOrder(){
+        Collections.sort(deckOfCards, Comparator.comparing(Card::getValue));
+        return deckOfCards;
+    }
+    public ArrayList<Card> sortDeckIntoSuits(){
+        Collections.sort(deckOfCards, Comparator.comparing(Card::getSuit));
+        return deckOfCards;
+    }
+
+    public ArrayList<Card> shuffleDeck(){
+        Collections.shuffle(deckOfCards);
+        return deckOfCards;
+    }
 }
