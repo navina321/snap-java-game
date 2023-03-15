@@ -22,6 +22,10 @@ public class CardGame {
         return deckOfCards;
     }
 
+    public ArrayList<Card> discardPile() {
+        return discardPile;
+    }
+
     public void populateDeck(){
         for (int i = 0; i < CardUtils.symbols.length; i++) {
             Card clubCard = new Card(CardUtils.suits[0],CardUtils.symbols[i],CardUtils.values[i]);
