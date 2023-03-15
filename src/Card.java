@@ -3,15 +3,20 @@ package src;
 import java.util.Arrays;
 
 public class Card {
-    int cardsInDeck =52;
-    String[] suit = {"Club", "Diamond", "Heart", "Spade"};
-    String[] rank = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+   private String suit;
+
+   private String symbol;
+
+   private int value;
+
+    public Card(String suit, String symbol, int value) {
+        this.suit = suit;
+        this.symbol = symbol;
+        this.value = value;
+    }
 
     @Override
     public String toString() {
-        return "[" +
-                Arrays.toString(rank) +
-                "of" + Arrays.toString(suit) +
-                "]";
+        return symbol + " of " + suit;
     }
 }
