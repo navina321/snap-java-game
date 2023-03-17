@@ -7,7 +7,6 @@ import java.util.Comparator;
 public class CardGame {
 
     private ArrayList<Card> deckOfCards = new ArrayList<>();
-    private ArrayList<Card> discardPile = new ArrayList<>();
     private String name;
 
     {
@@ -20,10 +19,6 @@ public class CardGame {
 
     public ArrayList<Card> getDeckOfCards() {
         return deckOfCards;
-    }
-
-    public ArrayList<Card> discardPile() {
-        return discardPile;
     }
 
     public void populateDeck(){
@@ -41,10 +36,7 @@ public class CardGame {
     }
 
     public Card dealCard(){
-        Card topCard = deckOfCards.get(0);
-        deckOfCards.remove(0);
-        discardPile.add(topCard);
-        return topCard;
+        return deckOfCards.get(0);
     }
 
     public ArrayList<Card> sortDeckInNumberOrder(){
